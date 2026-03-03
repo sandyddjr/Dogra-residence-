@@ -111,30 +111,99 @@
       <div class="welcome-text">Welcome to Our Home – Luxury Rooms, It's a family operated facility </div>
     </div>
   </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Luxury Bedrooms</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
 
-  <section id="rooms">
-    <h2>Our Comfortable Bedrooms</h2>
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: #ddd; /* Background dikhega agar image load na ho */
+        }
+
+        .mySlides { display: none; }
+
+        img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        /* Fade Animation */
+        .fade {
+            animation: fadeEffect 1.5s;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0.4} 
+            to {opacity: 1}
+        }
+
+        h2 { text-align: center; color: #333; }
+    </style>
+</head>
+<body>
+
+    <h2>Hamare 5 Shandaar Bedrooms</h2>
+
     <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=1200" alt="Modern AC Bedroom">
-      </div>
-      <div class="mySlides fade">
-        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1200" alt="Cozy Bedroom">
-      </div>
-      <div class="mySlides fade">
-        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200" alt="Master Bedroom">
-      </div>
-      <div class="mySlides fade">
-        <img src="https://images.unsplash.com/photo-1616594039964-ae1d169d0f5c?q=80&w=1200" alt="Modern Guest Room">
-      </div>
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800" alt="Bedroom 1">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800" alt="Bedroom 2">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800" alt="Bedroom 3">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800" alt="Bedroom 4">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800" alt="Bedroom 5">
+        </div>
     </div>
-    <div class="dots-container">
-      <span class="dot active" onclick="currentSlideRooms(1)"></span>
-      <span class="dot" onclick="currentSlideRooms(2)"></span>
-      <span class="dot" onclick="currentSlideRooms(3)"></span>
-      <span class="dot" onclick="currentSlideRooms(4)"></span>
-    </div>
-  </section>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            
+            // Sabko hide karo
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            
+            // Current slide dikhao
+            slides[slideIndex-1].style.display = "block";  
+            
+            setTimeout(showSlides, 3000); // 3 second baad change
+        }
+    </script>
+
+</body>
+</html>
+
+  
 
   <section id="washrooms">
     <h2>Our Modern Washrooms (Sharing)</h2>
